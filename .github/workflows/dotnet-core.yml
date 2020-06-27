@@ -2,9 +2,13 @@ name: .NET Core
 
 on:
   push:
-    branches: [ master ]
+    branches: 
+      - master 
+      - "j03INTHECLOUD/make-source-dir"
   pull_request:
-    branches: [ master ]
+    branches: 
+      - master 
+      - development
 
 jobs:
   build:
