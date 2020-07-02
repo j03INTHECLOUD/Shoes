@@ -14,11 +14,11 @@ namespace Shoes
 {
     public class Startup
     {
-        private IConfiguration _config;
+        public IConfiguration configuration { get; }
 
         public Startup(IConfiguration config)
         {
-            _config = config;
+            configuration = config;
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
