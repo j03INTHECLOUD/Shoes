@@ -26,10 +26,24 @@ namespace Shoes.Controllers
         }
 
         [HttpGet]
-        [Route("shoe")]
+        [Route("shoes")]
         public ActionResult<Dictionary<string, PairOfShoes>> GetShoe()
         {
             return _services.GetShoeInventory();
+        }
+
+        [HttpGet]
+        [Route("shoes/color/{color}")]
+        public ActionResult<List<PairOfShoes>> GetShoesByColor(string color)
+        {
+            return _services.GetShoesByColor(color);
+        }
+
+        [HttpGet]
+        [Route("shoe/{id}")]
+        public ActionResult<PairOfShoes> GetShoesById(string id)
+        {
+            return _services.GetShoesById(id);
         }
     }
 }
