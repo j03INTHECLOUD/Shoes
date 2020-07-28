@@ -10,5 +10,7 @@ namespace Shoes.Services
     {
         PairOfShoes AddPairShoesToInventory(PairOfShoes shoe);
         Dictionary<string, PairOfShoes> GetShoeInventory();
+        List<PairOfShoes> GetShoesByColor(string color);
+        PairOfShoes GetShoesById(string id);
     }
 }

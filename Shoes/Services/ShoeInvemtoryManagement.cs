@@ -17,7 +17,7 @@ namespace Shoes.Services
         {
             try
             {
-                _ShoeInventory.Add(shoe.Title, shoe);
+                _ShoeInventory.Add(shoe.Id, shoe);
             }
             catch(Exception e)
             {
@@ -30,5 +30,20 @@ namespace Shoes.Services
             return _ShoeInventory;
         }
 
+        public List<PairOfShoes> GetShoesByColor(string color)
+        {
+            return _ShoeInventory.Values.Where(value => value.Color == color).ToList();
+        }
+
+        public PairOfShoes GetShoesById(string id)
+        {
+            if (_ShoeInventory.Keys.Any(key => key.Contains(id)))
+            {
+                return _ShoeInventory[id];
+            }else
+            {
+                return null;
+            }
+        }
     }
 }

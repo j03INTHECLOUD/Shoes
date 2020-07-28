@@ -19,6 +19,7 @@ namespace Shoes
         {
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
             services.AddSingleton<IShoeInvemtoryManagement, ShoeInvemtoryManagement>();
+            services.AddSwaggerGen();
 
         }
 
@@ -38,6 +39,12 @@ namespace Shoes
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Shoe API V1");
+                c.RoutePrefix = string.Empty;
             });
         }
     }

@@ -16,6 +16,10 @@ namespace Shoes.Models
             Color = color;
             Title = title;
         }
+        public PairOfShoes()
+        {
+
+        }
 
         public string Id { get; set; }
         public string Brand { get; set; }
